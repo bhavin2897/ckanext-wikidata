@@ -23,7 +23,7 @@ class WikidataPlugin(plugins.SingletonPlugin):
 
         blueprint.template_folder = u'templates'
         blueprint.add_url_rule(
-            u'/localhost:5000/fancy_type/<package_name>',
+            u'/http://ckanchem11.test.service/fancy_type/<package_name>',
             u'generate_wikilink',
             WikidataController.generate_wikilink,
             methods=['POST']
@@ -31,7 +31,7 @@ class WikidataPlugin(plugins.SingletonPlugin):
         ## To display the information
         blueprint.template_folder = u'templates'
         blueprint.add_url_rule(
-            u'/localhost:5000/fancy_type/<package_name>',
+            u'/http://ckanchem11.test.service/fancy_type/<package_name>',
             u'generate_wikilink',
             WikidataController.generate_wikilink,
             methods=['GET']
