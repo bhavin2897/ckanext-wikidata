@@ -11,10 +11,10 @@
         {% if wikiinformationlink %}
 
             {% for link in wikiinformationlink %}
-                <p> Wikiinformation Link: <a href="{{ link }}" target="_blank"> {{ link }}</a> </p>
+                <p> WikiData Information to this molecule is available here: <a href="{{ link }}" target="_blank"> {{ link }}</a> </p>
             {% endfor %}
 
-        {% else %} <p> {{ _('No wiki information') }}</p>
+        {% else %} <p> <b> {{ _('No WikiData Information Link Available ') }} </b> </p>
 
         {% endif %}
     </div>
