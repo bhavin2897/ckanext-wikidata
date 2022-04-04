@@ -1,0 +1,14 @@
+# wikidata-js:
+#   filter: rjsmin
+#   output: ckanext-wikidata/%(version)s-wikidata.js
+#   contents:
+#     - js/wikidata.js
+#   extra:
+#     preload:
+#       - base/main
+
+# wikidata-css:
+#   filter: cssrewrite
+#   output: ckanext-wikidata/%(version)s-wikidata.css
+#   contents:
+#     - css/wikidata.css

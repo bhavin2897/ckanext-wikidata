@@ -1,0 +1,8 @@
+{% ckan_extends %}
+
+{% block package_additional_info %}
+
+    {% snippet "snippets/wikidata.html", pkg = pkg_dict %}
+    {{ super() }}
+
+{% endblock %}
