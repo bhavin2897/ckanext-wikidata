@@ -1,23 +1,23 @@
+{#{% asset 'ckanext-wikidata/myDisplay-js'%}#}
 
 {% set destination_url = h.url_for('wikidata.generate_wikilink', package_name = pkg.get('id'), _external=True) %}
 {% set wikiinformationlink = h.wikidata_link(package_name= pkg.get('id'))  %}
 
 <input type="hidden" id="get_url" value="{{destination_url}}">
-<input type="hidden" id="package_id" value="{{pkg.id}}">
+<input type="hidden" id="wikiinformationlink" value ="{{wikiinformationlink}}">
 
-<section class = "chemical-info">
-    <h2> WikiData Link </h2>
-    <div>
-        {% if wikiinformationlink %}
 
-            {% for link in wikiinformationlink %}
-                <p> Wikiinformation Link: <a href="{{ link }}" target="_blank"> {{ link }}</a> </p>
-            {% endfor %}
+<div>
+    {% if wikiinformationlink %}
+        <h2> WikiData Link <span> &#9989; </span></h2>
+        {% for link in wikiinformationlink %}
+            <p> WikiData Information to this molecule is available here: <a href="{{ link }}" target="_blank"> {{ link }}</a> </p>
+        {% endfor %}
+    {% else %}
+        <h2> WikiData Link </h2>
+        <p> <b> {{ _('No WikiData Information Link Available ') }} </b></p>
+    {% endif %}
+</div>
 
-        {% else %} <p> {{ _('No wiki information') }}</p>
-
-        {% endif %}
-    </div>
-</section>
 
 

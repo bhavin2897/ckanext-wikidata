@@ -1,8 +1,16 @@
 {% ckan_extends %}
 
 {% block package_additional_info %}
+    {# {% set destination_url = h.url_for('wikidata.generate_wikilink', package_name = pkg_dict.id, _external=True) %} #}
+    <input type="hidden" id="package_id" value="{{ pkg_dict.id }}">
+    <input type="hidden" id="ajax_url" value="{{ h.url_for('wikidata.generate_wikilink', package_name = pkg_dict.id, _external=True) }}">
 
-    {% snippet "snippets/wikidata.html", pkg = pkg_dict %}
+    <div id="wikidata_block">
+        <h2> WikiData Information </h2>
+        <script src="{% url_for_static('statics/myDisplay.js') %}"> </script>
+        <h2 id="display_wiki_info"> </h2>
+    </div>
+
     {{ super() }}
 
 {% endblock %}
