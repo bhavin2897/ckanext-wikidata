@@ -3,20 +3,13 @@
 {% set destination_url = h.url_for('wikidata.generate_wikilink', package_name = pkg.get('id'), _external=True) %}
 {% set wikiinformationlink = h.wikidata_link(package_name= pkg.get('id'))  %}
 
-<input type="hidden" id="get_url" value="{{destination_url}}">
-<input type="hidden" id="wikiinformationlink" value ="{{wikiinformationlink}}">
+<input type="hidden" id="package_id" value="{{ pkg_dict.id }}">
+<input type="hidden" id="ajax_url" value="{{ h.url_for('wikidata.generate_wikilink', package_name = pkg_dict.id, _external=True) }}">
 
-
-<div>
-    {% if wikiinformationlink %}
-        <h2> WikiData Link <span> &#9989; </span></h2>
-        {% for link in wikiinformationlink %}
-            <p> WikiData Information to this molecule is available here: <a href="{{ link }}" target="_blank"> {{ link }}</a> </p>
-        {% endfor %}
-    {% else %}
-        <h2> WikiData Link </h2>
-        <p> <b> {{ _('No WikiData Information Link Available ') }} </b></p>
-    {% endif %}
+<div id="wikidata_block">
+    <h2> WikiData Information </h2>
+    <script src="{% url_for_static('statics/myDisplay.js') %}"> </script>
+    <h2 id="display_wiki_info"> </h2>
 </div>
 
 
