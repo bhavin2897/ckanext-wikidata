@@ -38,7 +38,7 @@ function get_response(target,url){
 
 function building(value){
     console.log('YES')
-    return "<p> WikiData Information to this molecule is available <a href=' " + value + "' target='_blank'> here </a> </p>"
+    return "<h6> WikiData Information to this molecule is available <a href=' " + value + "' target='_blank'> here </a> </h6>"
 }
 
 
