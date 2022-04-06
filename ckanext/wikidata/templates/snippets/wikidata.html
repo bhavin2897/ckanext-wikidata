@@ -6,10 +6,11 @@
 <input type="hidden" id="package_id" value="{{ pkg_dict.id }}">
 <input type="hidden" id="ajax_url" value="{{ h.url_for('wikidata.generate_wikilink', package_name = pkg_dict.id, _external=True) }}">
 
-<div id="wikidata_block">
-    <h2> WikiData Information </h2>
-    <script src="{% url_for_static('statics/myDisplay.js') %}"> </script>
-    <h2 id="display_wiki_info"> </h2>
+<div>
+   <script src="{% url_for_static('statics/myDisplay.js') %}"> </script>
+   <div id="display_wiki_info">
+     <img src="/statics/Reload-1s-200px.gif" alt="reload" width="25px" height="25px">
+   </div>
 </div>
 
 
