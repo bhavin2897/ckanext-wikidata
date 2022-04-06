@@ -4,7 +4,7 @@
     {# {% set destination_url = h.url_for('wikidata.generate_wikilink', package_name = pkg_dict.id, _external=True) %} #}
     <input type="hidden" id="package_id" value="{{ pkg_dict.id }}">
     <input type="hidden" id="ajax_url" value="{{ h.url_for('wikidata.generate_wikilink', package_name = pkg_dict.id, _external=True) }}">
-
+    {% if pkg_dict.inchi %}
     <div>
         <h2> WikiData Information </h2>
         <script src="{% url_for_static('statics/myDisplay.js') %}"> </script>
@@ -12,6 +12,7 @@
             <img src="/statics/Reload-1s-200px.gif" alt="reload" width="25px" height="25px">
         </div>
     </div>
+    {% endif %}
 
     {{ super() }}
 
