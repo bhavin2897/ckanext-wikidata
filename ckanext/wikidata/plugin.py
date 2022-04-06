@@ -23,7 +23,7 @@ class WikidataPlugin(plugins.SingletonPlugin):
 
         blueprint.template_folder = u'templates'
         blueprint.add_url_rule(
-            u'http://ckanchem11.test.service.tib.eu/fancy_type/<package_name>',
+            u'/http://ckanchem11.test.service.tib.eu/fancy_type/<package_name>',
             u'generate_wikilink',
             WikidataController.generate_wikilink,
             methods=['GET','POST']
